@@ -299,7 +299,9 @@ pub mod message {
         #[command(description = "get ids")]
         Ids,
         #[command(description = "unban maintainer in channel's chat")]
-        Unban,
+        UnbanChat,
+        #[command(description = "unban maintainer in channel")]
+        UnbanChannel,
         #[command(description = "kick (w/ ban) maintainer from channel")]
         KickAndBan,
         #[command(description = "kick (w/o ban) maintainer from channel")]
@@ -331,9 +333,12 @@ pub mod message {
              cmd: MaintainerCommands,
              cfg: Arc<Config>| async move {
                 match cmd {
-                    MaintainerCommands::Unban => {
+                    MaintainerCommands::UnbanChat => {
                         bot.unban_chat_member(cfg.channel_chat_id, maintainer_id)
                             .await?;
+                    }
+                    MaintainerCommands::UnbanChannel => {
+                        bot.unban_chat_member(cfg.channel_id, maintainer_id).await?;
                     }
                     MaintainerCommands::KickAndBan => {
                         bot.kick_chat_member(cfg.channel_id, maintainer_id).await?;
