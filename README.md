@@ -2,7 +2,7 @@
 
 A telegram bot made with [teloxide](https://docs.rs/teloxide/latest/teloxide/) to do some routine administration.
 
-## User story.
+## User story
 There is a public channel which has a joined chat for comments. The last one should be open for anyone to allow users to write comments below posts with no restrictions. But at the same time, disscussions beyond post's topics should be accessable only for those people who match some rules. Users who don't match the rules, should be kicked from the chat and banned in it.
 
 As an admin I don't want to check every person who has joined and then do according actions manually.
