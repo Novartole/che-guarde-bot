@@ -24,7 +24,9 @@ async fn main() {
                 .branch(handlers::update::user_left_or_was_kicked_from_channel()),
         )
         .branch(
-            Update::filter_message().branch(handlers::message::user_was_kicked_from_channel_chat()),
+            Update::filter_message()
+                .branch(handlers::message::user_was_kicked_from_channel_chat())
+                .branch(handlers::message::sent_checkhealth_command()),
         );
 
     if cfg!(debug_assertions) {

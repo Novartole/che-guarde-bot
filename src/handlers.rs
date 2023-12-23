@@ -364,4 +364,24 @@ pub mod message {
             },
         )
     }
+
+    #[derive(BotCommands, Clone)]
+    #[command(rename_rule = "lowercase")]
+    enum CheckhealthCommands {
+        Ping,
+    }
+
+    pub fn sent_checkhealth_command() -> HandlerType {
+        dptree::filter(|msg: Message| msg.chat.is_private())
+            .filter_command::<CheckhealthCommands>()
+            .endpoint(
+                |bot: Bot, msg: Message, cmd: CheckhealthCommands| async move {
+                    match cmd {
+                        CheckhealthCommands::Ping => bot.send_message(msg.chat.id, "pong").await?,
+                    };
+
+                    Ok(())
+                },
+            )
+    }
 }
