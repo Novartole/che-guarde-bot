@@ -16,10 +16,10 @@ Once a user joins the chat of comments, Bot checks that the user follows the rul
 
 ## Development
 The following variables are mandatory to be able to run Bot locally:
-CHANNEL_ID - channel id,
-CHANNEL_CHAT_ID - chat id of a chat linked to the channel (usually this's a chat created for comments of channel's posts),
-WORK_CHAT_ID - chat id of an admin chat which members will get notifications from Bot,
-TELOXIDE_TOKEN - telegram-bot token. 
+- CHANNEL_ID - channel id,
+- CHANNEL_CHAT_ID - chat id of a chat linked to the channel (usually this's a chat created for comments of channel's posts),
+- WORK_CHAT_ID - chat id of an admin chat which members will get notifications from Bot,
+- TELOXIDE_TOKEN - telegram-bot token. 
 
 Channel and chat ids could be get, [for instance](https://stackoverflow.com/questions/72640703/telegram-how-to-find-group-chat-id), from the web version of Telegram. The token is provided by [BotFather](https://telegram.me/BotFather).
 
